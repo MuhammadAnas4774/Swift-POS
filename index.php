@@ -1,7 +1,10 @@
 <?php
 session_start();
+$config = require 'config.php';
 $contactError = $_SESSION['contact_error'] ?? '';
-unset($_SESSION['contact_error']);
+$contactSuccess = $_SESSION['contact_success'] ?? '';
+unset($_SESSION['contact_error'], $_SESSION['contact_success']);
+
 if (empty($_SESSION['csrf_token'])) {
     $_SESSION['csrf_token'] = bin2hex(random_bytes(32));
 }
@@ -231,6 +234,9 @@ $csrfToken = $_SESSION['csrf_token'];
         <div class="contact-panel">
           <?php if ($contactError): ?>
             <p class="form-alert form-alert-error" role="alert"><?php echo htmlspecialchars($contactError, ENT_QUOTES, 'UTF-8'); ?></p>
+          <?php endif; ?>
+          <?php if ($contactSuccess): ?>
+            <p class="form-alert form-alert-success" role="alert"><?php echo htmlspecialchars($contactSuccess, ENT_QUOTES, 'UTF-8'); ?></p>
           <?php endif; ?>
           <form class="contact-form" method="post" action="process-contact.php" novalidate>
             <input type="hidden" name="csrf_token" value="<?php echo htmlspecialchars($csrfToken, ENT_QUOTES, 'UTF-8'); ?>">
