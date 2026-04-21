@@ -14,4 +14,5 @@ return [
         'linkedin' => '#',
         'github' => 'https://github.com/MuhammadAnas4774/Swift-POS',
     ],
+    
 ];
