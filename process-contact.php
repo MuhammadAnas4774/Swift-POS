@@ -1,5 +1,6 @@
 <?php
 session_start();
+$config = require 'config.php';
 
 if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
     header('Location: index.php#contact', true, 303);
@@ -87,6 +88,7 @@ $headers = [
 @mail('hello@swiftpos.example', '=?UTF-8?B?' . base64_encode($subject) . '?=', $body, implode("\r\n", $headers));
 
 $_SESSION['csrf_token'] = bin2hex(random_bytes(32));
+$_SESSION['contact_success'] = 'Thank you! Your message has been sent successfully.';
 
-header('Location: thank-you.html', true, 303);
+header('Location: index.php#contact', true, 303);
 exit;
