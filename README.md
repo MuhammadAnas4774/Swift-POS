@@ -1,3 +1,11 @@
+# QuickPOS Landing Page
+
+![QuickPOS CI/CD Pipeline](https://github.com/MuhammadAnas4774/Swift-POS/actions/workflows/ci.yml/badge.svg)
+
+QuickPOS is a responsive POS landing page built with PHP.
+
+---
+
 # SwiftPOS marketing site (demo)
 
 A small PHP + static asset landing page for a fictional POS product, structured for XAMPP on Windows.
