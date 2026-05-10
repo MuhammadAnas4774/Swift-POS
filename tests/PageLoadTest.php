@@ -1,5 +1,7 @@
 <?php
 
+namespace QuickPOS\Tests;
+
 use PHPUnit\Framework\TestCase;
 
 class PageLoadTest extends TestCase

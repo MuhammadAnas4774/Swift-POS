@@ -235,10 +235,10 @@ $csrfToken = $_SESSION['csrf_token'];
           </address>
         </div>
         <div class="contact-panel">
-          <?php if ($contactError): ?>
+          <?php if ($contactError) : ?>
             <p class="form-alert form-alert-error" role="alert"><?php echo htmlspecialchars($contactError, ENT_QUOTES, 'UTF-8'); ?></p>
           <?php endif; ?>
-          <?php if ($contactSuccess): ?>
+          <?php if ($contactSuccess) : ?>
             <p class="form-alert form-alert-success" role="alert"><?php echo htmlspecialchars($contactSuccess, ENT_QUOTES, 'UTF-8'); ?></p>
           <?php endif; ?>
           <form class="contact-form" method="post" action="process-contact.php" novalidate>

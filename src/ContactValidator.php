@@ -1,5 +1,7 @@
 <?php
 
+namespace QuickPOS;
+
 class ContactValidator
 {
     public function validate(array $data): array
