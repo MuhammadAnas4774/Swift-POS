@@ -32,6 +32,7 @@ jobs:
       - name: Run PHP CodeSniffer
         run: vendor/bin/phpcs
 
+  # Run PHPUnit tests to verify functionality
   automated-tests:
     name: Automated Tests
     runs-on: ubuntu-latest
@@ -52,6 +53,7 @@ jobs:
       - name: Run PHPUnit Tests
         run: vendor/bin/phpunit tests
 
+  # Validate PHP syntax across all project files
   syntax-check:
     name: PHP Syntax Check
     runs-on: ubuntu-latest
@@ -69,6 +71,7 @@ jobs:
         run: |
           find . -name "*.php" -not -path "./vendor/*" -print0 | xargs -0 -n1 php -l
 
+  # Ensure commit messages follow Jira ticket format
   commit-validation:
     name: Validate Jira Commit ID
     runs-on: ubuntu-latest

@@ -16,6 +16,18 @@ Rules enabled:
 - Direct commits to develop are not allowed
 - Commit messages must include Jira ticket ID
 
+## Parallel CI Pipeline
+
+The GitHub Actions workflow is optimized using parallel jobs.
+
+Parallel jobs include:
+
+- Code Quality Check
+- Automated Tests
+- PHP Syntax Validation
+
+Artifact upload executes only after all jobs pass successfully.
+
 ---
 
 # SwiftPOS marketing site (demo)
