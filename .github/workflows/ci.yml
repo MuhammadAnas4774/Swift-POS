@@ -11,6 +11,7 @@ on:
       - "bugfix/**"
 
 jobs:
+  # Run PHP CodeSniffer for code quality standards
   code-quality:
     name: Code Quality Check
     runs-on: ubuntu-latest
