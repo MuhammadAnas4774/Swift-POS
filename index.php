@@ -46,11 +46,14 @@ $csrfToken = $_SESSION['csrf_token'];
   </header>
 
   <main id="main">
+    <div class="container">
+      <h1>QuickPOS</h1>
+    </div>
     <section class="hero">
       <div class="container hero-grid">
         <div class="hero-copy">
           <p class="eyebrow">Retail POS, rethought</p>
-          <h1>Checkout that keeps pace with your floor.</h1>
+          <h2>Checkout that keeps pace with your floor.</h2>
           <p class="lead">SwiftPOS unifies registers, stock, and reporting so your team spends less time tapping and more time with customers.</p>
           <div class="hero-actions">
             <a class="btn btn-primary" href="#contact">Talk to sales</a>
