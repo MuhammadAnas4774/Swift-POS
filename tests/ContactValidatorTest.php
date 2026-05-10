@@ -1,8 +1,9 @@
 <?php
 
-use PHPUnit\Framework\TestCase;
+namespace QuickPOS\Tests;
 
-require_once __DIR__ . '/../src/ContactValidator.php';
+use PHPUnit\Framework\TestCase;
+use QuickPOS\ContactValidator;
 
 class ContactValidatorTest extends TestCase
 {

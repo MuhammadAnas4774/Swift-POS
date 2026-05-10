@@ -1,8 +1,10 @@
 <?php
+
 /**
  * SwiftPOS Configuration
  * This file contains the main configuration settings for the SwiftPOS platform.
  */
+
 return [
     'app_name' => 'SwiftPOS',
     'contact_email' => 'hello@swiftpos.example',
@@ -14,5 +16,5 @@ return [
         'linkedin' => '#',
         'github' => 'https://github.com/MuhammadAnas4774/Swift-POS',
     ],
-    
+
 ];
