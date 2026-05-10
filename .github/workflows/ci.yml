@@ -67,10 +67,32 @@ jobs:
         run: |
           find . -name "*.php" -not -path "./vendor/*" -print0 | xargs -0 -n1 php -l
 
+  commit-validation:
+    name: Validate Jira Commit ID
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Validate commit messages
+        run: |
+          git log origin/develop..HEAD --format=%s | while read message; do
+            echo "Checking commit: $message"
+            if ! echo "$message" | grep -Eq '^\[POS-[0-9]+\]'; then
+              echo "Invalid commit message: $message"
+              echo "Commit must start with Jira ID, example: [POS-205] Add commit validation"
+              exit 1
+            fi
+          done
+
   artifact-upload:
     name: Upload Build Artifact
     runs-on: ubuntu-latest
     needs:
+      - commit-validation
       - code-quality
       - automated-tests
       - syntax-check
