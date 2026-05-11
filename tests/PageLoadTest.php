@@ -18,3 +18,8 @@ class PageLoadTest extends TestCase
         $this->assertStringContainsString('QuickPOS', $content);
     }
 }
+
+/// Updated test check for pos
+/// Updated test check for pos
+/// Updated test check for pos
+/// Updated test check for pos
